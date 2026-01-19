@@ -3,16 +3,12 @@
 class Program
 {
     static Random random = new Random();
-
     static void Main()
     {
-        
         if (ShouldPlay())
         {
             LuckyNumberGame();
-
         }
-
     }
  static bool ShouldPlay()
 {
@@ -25,23 +21,24 @@ class Program
            
             if (response == 1)
               return true;
+            
             else if (response == 0)
               return false;
+            
             else
                 Console.WriteLine("Invalid choice. Please enter 1 for Yes or 0 for No.");
         
         }
         catch
-        
         {
              Console.WriteLine("Enter 1 for yes and 0 for No");
         }
- }
+   }
 
 }
 
  static void LuckyNumberGame()
-{
+ {
     int enteredNumber;
     while (true)
     {
@@ -51,14 +48,14 @@ class Program
             string numberGuessed = Console.ReadLine();
             enteredNumber = int.Parse(numberGuessed);
 
-            
             if (enteredNumber < 1 || enteredNumber > 10)
             {
                 Console.WriteLine("Please enter a number between 1 and 10.");
-                continue; // loop again
+                continue;
             }
             break;
         }
+        
         catch
         {
             Console.WriteLine("Please enter a valid number");
@@ -75,5 +72,5 @@ class Program
     {
         Console.WriteLine($"Sorry, the number was {number}. You guessed {enteredNumber}. Try again!");
     }
-}
+ }
 }
